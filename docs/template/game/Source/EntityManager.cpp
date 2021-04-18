@@ -1,0 +1,120 @@
+#include "EntityManager.h"
+
+#include "Input.h"
+#include "Render.h"
+#include "Textures.h"
+#include "SceneManager.h"
+
+#include "Player.h"
+
+#include "Defs.h"
+#include "Log.h"
+
+
+
+// Constructor
+EntityManager::EntityManager(Input* input, Render* render, Textures* tex) : Module()
+{
+	this->input = input;
+	this->render = render;
+	this->tex = tex;
+
+	name.Create("entitymanager");
+}
+// Destructor
+EntityManager::~EntityManager()
+{}
+
+
+// Called before render is available
+bool EntityManager::Awake(pugi::xml_node& config)
+{
+	LOG("Loading Entity Manager");
+	bool ret = true;
+
+	return ret;
+}
+
+
+// Called each loop iteration
+bool EntityManager::Update(float dt)
+{
+	accumulatedTime += dt;
+	if (accumulatedTime >= updateMsCycle) doLogic = true;
+
+	UpdateAll(dt, doLogic);
+
+	if (doLogic == true)
+	{
+		accumulatedTime = 0.0f;
+		doLogic = false;
+	}
+
+	return true;
+}
+
+
+// Called before quitting
+bool EntityManager::CleanUp()
+{
+	if (!active) return true;
+
+	return true;
+}
+
+
+Entity* EntityManager::CreateEntity(EntityType type)
+{
+	Entity* ret = nullptr;
+
+	switch (type)
+	{
+	case EntityType::PLAYER:
+		ret = Player::GetInstance(input, render, tex);
+
+		if (ret != nullptr && (Player*)entities.start == nullptr)
+		{
+			Player::SetCollision(&collision, (Player*)ret);
+
+			// Created entities are added to the list
+			entities.Add(ret);
+		}
+		break;
+	default: break;
+	}
+
+	return ret;
+}
+
+
+bool EntityManager::UpdateAll(float dt, bool doLogic)
+{
+	if (doLogic)
+	{
+		// TODO: Update all entities 
+		ListItem<Entity*>* list = NULL;
+		list = entities.start;
+
+		while (list != NULL)
+		{
+			list->data->Update(dt);
+			list = list->next;
+		}
+	}
+
+	return true;
+}
+
+bool EntityManager::Draw()
+{
+	ListItem<Entity*>* list = NULL;
+	list = entities.start;
+
+	while (list != NULL)
+	{
+		list->data->Draw();
+		list = list->next;
+	}
+
+	return true;
+}

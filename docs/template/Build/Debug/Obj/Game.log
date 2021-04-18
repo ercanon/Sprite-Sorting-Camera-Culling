@@ -1,0 +1,31 @@
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(505,5): warning MSB8004: El directorio Output no termina con una barra diagonal final. Esta instancia de compilación agregará la barra diagonal porque es necesaria para que se pueda evaluar correctamente el directorio Output.
+  App.cpp
+  EntityManager.cpp
+  Exterior.cpp
+C:\Users\ercanon\Documents\GitHub\Sprite-Sorting-Camera-Culling\docs\template\game\Source\Exterior.cpp(22,10): warning C4101: 'h': variable local sin referencia
+C:\Users\ercanon\Documents\GitHub\Sprite-Sorting-Camera-Culling\docs\template\game\Source\Exterior.cpp(22,7): warning C4101: 'w': variable local sin referencia
+  Player.cpp
+C:\Users\ercanon\Documents\GitHub\Sprite-Sorting-Camera-Culling\docs\template\game\Source\Player.cpp(91,47): warning C4244: '-=': conversión de 'float' a 'TYPE'; posible pérdida de datos
+          with
+          [
+              TYPE=int
+          ]
+C:\Users\ercanon\Documents\GitHub\Sprite-Sorting-Camera-Culling\docs\template\game\Source\Player.cpp(96,51): warning C4244: '+=': conversión de 'float' a 'TYPE'; posible pérdida de datos
+          with
+          [
+              TYPE=int
+          ]
+C:\Users\ercanon\Documents\GitHub\Sprite-Sorting-Camera-Culling\docs\template\game\Source\Player.cpp(102,47): warning C4244: '-=': conversión de 'float' a 'TYPE'; posible pérdida de datos
+          with
+          [
+              TYPE=int
+          ]
+C:\Users\ercanon\Documents\GitHub\Sprite-Sorting-Camera-Culling\docs\template\game\Source\Player.cpp(107,51): warning C4244: '+=': conversión de 'float' a 'TYPE'; posible pérdida de datos
+          with
+          [
+              TYPE=int
+          ]
+  SceneManager.cpp
+  Generando código...
+  Game.vcxproj -> C:\Users\ercanon\Documents\GitHub\Sprite-Sorting-Camera-Culling\docs\template\Build\Debug\Game.exe
+          1 archivo(s) copiado(s).
