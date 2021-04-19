@@ -18,7 +18,7 @@ Map::Map(Textures* texture) : Entity(EntityType::MAP)
 Map::~Map()
 {}
 
-// L06: DONE 7: Ask for the value of a custom property
+
 int Properties::GetProperty(const char* value, int defaultValue) const
 {
 	ListItem<Property*>* item = list.start;
@@ -184,7 +184,6 @@ SDL_Rect Map::GetTilemapRec(int x, int y) const
 	return rec;
 }
 
-// L06: DONE 3: Pick the right Tileset based on a tile id
 TileSet* Map::GetTilesetFromTileId(int id) const
 {
 	ListItem<TileSet*>* item = data.tilesets.start;
@@ -209,7 +208,6 @@ SDL_Rect TileSet::GetTileRect(int id) const
 {
 	SDL_Rect rect = { 0 };
 
-	// L04: DONE 7: Get relative Tile rectangle
 	int relativeId = id - firstgid;
 	rect.w = tileWidth;
 	rect.h = tileHeight;
@@ -431,7 +429,6 @@ bool Map::LoadTilesetImage(pugi::xml_node& tileset_node, TileSet* set)
 	}
 	else
 	{
-		// L03: DONE: Load Tileset image
 		set->texture = tex->Load(PATH(folder.GetString(), source.attribute("source").as_string()));
 		int w, h;
 		SDL_QueryTexture(set->texture, NULL, NULL, &w, &h);

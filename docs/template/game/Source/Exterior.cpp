@@ -15,8 +15,6 @@ Exterior::Exterior(SceneManager* sceneManager) : Scene()
 
 	map = new Map(sceneManager->tex);
 
-	// L03: DONE: Load map
-	// L12b: Create walkability map on map loading
 	if (map->Load("world_research.tmx") == true)
 	{
 		int w, h;

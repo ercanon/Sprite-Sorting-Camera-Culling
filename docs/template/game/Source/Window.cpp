@@ -34,7 +34,6 @@ bool Window::Awake(pugi::xml_node& config)
 	else
 	{
 		// Create window
-		// L01: DONE 6: Load all required configurations from config.xml
 		Uint32 flags = SDL_WINDOW_SHOWN;
 		title = config.child("title").child_value();
 		bool fullscreen = config.child("fullscreen").attribute("value").as_bool(false);

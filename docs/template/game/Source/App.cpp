@@ -161,7 +161,6 @@ void App::PrepareUpdate()
 	framecount++;
 	lastsecframecount++;
 
-	// L08: DONE 4: Calculate the dt: differential time since last frame
 	dt = frametime.ReadSec();
 	frametime.Start();
 	delayTimer.Start();

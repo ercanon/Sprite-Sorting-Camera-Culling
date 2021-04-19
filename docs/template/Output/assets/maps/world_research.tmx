@@ -5,6 +5,46 @@
  </properties>
  <tileset firstgid="1" name="Lanea_Zimmerman" tilewidth="32" tileheight="32" tilecount="42" columns="6">
   <image source="tileset.png" width="192" height="224"/>
+  <tile id="4">
+   <properties>
+    <property name="detectObject" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="5">
+   <properties>
+    <property name="detectObject" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="10">
+   <properties>
+    <property name="detectObject" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="11">
+   <properties>
+    <property name="detectObject" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="16">
+   <properties>
+    <property name="detectObject" type="int" value="2"/>
+   </properties>
+  </tile>
+  <tile id="17">
+   <properties>
+    <property name="detectObject" type="int" value="2"/>
+   </properties>
+  </tile>
+  <tile id="22">
+   <properties>
+    <property name="detectObject" type="int" value="2"/>
+   </properties>
+  </tile>
+  <tile id="23">
+   <properties>
+    <property name="detectObject" type="int" value="2"/>
+   </properties>
+  </tile>
  </tileset>
  <tileset firstgid="43" name="Collisiones" tilewidth="32" tileheight="32" tilecount="3" columns="3">
   <image source="prop_collsions_v01.png" width="96" height="33"/>
