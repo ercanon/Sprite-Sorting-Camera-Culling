@@ -2,8 +2,15 @@
   App.cpp
   EntityManager.cpp
   Exterior.cpp
-C:\Users\ercanon\Documents\GitHub\Sprite-Sorting-Camera-Culling\docs\template\game\Source\Exterior.cpp(22,10): warning C4101: 'h': variable local sin referencia
-C:\Users\ercanon\Documents\GitHub\Sprite-Sorting-Camera-Culling\docs\template\game\Source\Exterior.cpp(22,7): warning C4101: 'w': variable local sin referencia
+C:\Users\ercanon\Documents\GitHub\Sprite-Sorting-Camera-Culling\docs\template\game\Source\Exterior.cpp(20,10): warning C4101: 'h': variable local sin referencia
+C:\Users\ercanon\Documents\GitHub\Sprite-Sorting-Camera-Culling\docs\template\game\Source\Exterior.cpp(20,7): warning C4101: 'w': variable local sin referencia
+  Map.cpp
+C:\Users\ercanon\Documents\GitHub\Sprite-Sorting-Camera-Culling\docs\template\game\Source\Map.cpp(93,20): warning C4018: '<': no coinciden signed/unsigned
+C:\Users\ercanon\Documents\GitHub\Sprite-Sorting-Camera-Culling\docs\template\game\Source\Map.cpp(101,10): warning C4018: '<': no coinciden signed/unsigned
+C:\Users\ercanon\Documents\GitHub\Sprite-Sorting-Camera-Culling\docs\template\game\Source\Map.cpp(181,25): warning C4838: la conversión de 'uint32' en 'int' requiere una conversión de restricción
+C:\Users\ercanon\Documents\GitHub\Sprite-Sorting-Camera-Culling\docs\template\game\Source\Map.cpp(181,58): warning C4838: la conversión de 'uint32' en 'int' requiere una conversión de restricción
+C:\Users\ercanon\Documents\GitHub\Sprite-Sorting-Camera-Culling\docs\template\game\Source\Map.cpp(182,22): warning C4838: la conversión de 'uint32' en 'int' requiere una conversión de restricción
+C:\Users\ercanon\Documents\GitHub\Sprite-Sorting-Camera-Culling\docs\template\game\Source\Map.cpp(182,47): warning C4838: la conversión de 'uint32' en 'int' requiere una conversión de restricción
   Player.cpp
 C:\Users\ercanon\Documents\GitHub\Sprite-Sorting-Camera-Culling\docs\template\game\Source\Player.cpp(91,47): warning C4244: '-=': conversión de 'float' a 'TYPE'; posible pérdida de datos
           with
@@ -27,5 +34,6 @@ C:\Users\ercanon\Documents\GitHub\Sprite-Sorting-Camera-Culling\docs\template\ga
           ]
   SceneManager.cpp
   Generando código...
+  LINK : no se encontró C:\Users\ercanon\Documents\GitHub\Sprite-Sorting-Camera-Culling\docs\template\Build\Debug\Game.exe o no lo generó el último vínculo incremental; ejecutando vínculo completo
   Game.vcxproj -> C:\Users\ercanon\Documents\GitHub\Sprite-Sorting-Camera-Culling\docs\template\Build\Debug\Game.exe
           1 archivo(s) copiado(s).

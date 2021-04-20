@@ -2,7 +2,7 @@
 #define __EXTERIOR_H__
 
 #define LEFT_CAMERA_LIMIT 0
-#define RIGHT_CAMERA_LIMIT -1275
+#define RIGHT_CAMERA_LIMIT -795
 
 #include "Scene.h"
 #include "Font.h"
