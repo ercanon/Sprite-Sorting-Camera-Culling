@@ -399,7 +399,6 @@ bool Map::LoadTilesetDetails(pugi::xml_node& tileset_node, TileSet* set)
 	set->firstgid = tileset_node.attribute("firstgid").as_int();
 	set->tileWidth = tileset_node.attribute("tilewidth").as_int();
 	set->tileHeight = tileset_node.attribute("tileheight").as_int();
-	set->tileCount = tileset_node.attribute("tilecount").as_int();
 	set->margin = tileset_node.attribute("margin").as_int();
 	set->spacing = tileset_node.attribute("spacing").as_int();
 	pugi::xml_node offset = tileset_node.child("tileoffset");
@@ -413,18 +412,6 @@ bool Map::LoadTilesetDetails(pugi::xml_node& tileset_node, TileSet* set)
 	{
 		set->offsetX = 0;
 		set->offsetY = 0;
-	}
-
-	set->tileCount = 0;
-	pugi::xml_node actualNode = tileset_node.child("tile");
-	while (actualNode.child("properties"))
-	{
-		set->tileProperty[set->tileCount].tileId = actualNode.attribute("id").as_int();
-		// Load layer properties
-		LoadProperties(actualNode, set->tileProperty[set->tileCount].properties);
-
-		actualNode = actualNode.next_sibling();
-		set->tileCount++;
 	}
 
 	return ret;

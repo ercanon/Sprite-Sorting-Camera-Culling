@@ -71,7 +71,8 @@ bool Exterior::Update(float dt)
 bool Exterior::Draw()
 {
 	// Draw map
-	sceneManager->entityManager->DrawSorted(map);
+	map->Draw(sceneManager->render);
+	sceneManager->entityManager->Draw();
 
 	return false;
 }

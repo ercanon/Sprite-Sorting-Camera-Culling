@@ -14,8 +14,6 @@
 #include "PugiXml/src/pugixml.hpp"
 
 #define COST_MAP_SIZE	100
-#define MAX_TILES_WITH_PROPERTIES 42
-#define MAX_TILES_ASSEMBLED 50
 
 
 enum MapTypes
@@ -63,13 +61,6 @@ struct TileSet
 	int	spacing;
 	int	tileWidth;
 	int	tileHeight;
-
-	int tileCount;
-	struct TileProperty
-	{
-		int tileId;
-		Properties properties;
-	} tileProperty[MAX_TILES_WITH_PROPERTIES];
 
 	SDL_Texture* texture;
 	int	texWidth;
@@ -135,22 +126,6 @@ struct MapData
 	List<MapLayer*> layers;
 
 	List<ObjectLayer*> objLayers;
-};
-
-class Assemble
-{
-public:
-
-	int tilesAssemble = 0;
-	struct TileInfo
-	{
-		iPoint tileMapPosition;
-		iPoint tileWorldPosition;
-		TileSet* tileset;
-		SDL_Rect rectangle;
-
-	} tileInfo[MAX_TILES_ASSEMBLED];
-
 };
 
 class Map : public Entity
