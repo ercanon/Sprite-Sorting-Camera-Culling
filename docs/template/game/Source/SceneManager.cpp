@@ -57,10 +57,10 @@ bool SceneManager::PreUpdate()
 bool SceneManager::Update(float dt)
 {
 		//General Debug Keys
-		if (input->GetKey(SDL_SCANCODE_F10) == KEY_DOWN)
-			win->ToggleFullscreen(win->window);
+	if (input->GetKey(SDL_SCANCODE_F10) == KEY_DOWN)
+		win->ToggleFullscreen(win->window);
 
-		current->Update(dt);
+	current->Update(dt);
 
 	// Draw current scene
 	current->Draw();

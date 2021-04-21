@@ -1,6 +1,11 @@
 ﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(505,5): warning MSB8004: El directorio Output no termina con una barra diagonal final. Esta instancia de compilación agregará la barra diagonal porque es necesaria para que se pueda evaluar correctamente el directorio Output.
   App.cpp
   EntityManager.cpp
+C:\Users\ercanon\Documents\GitHub\Sprite-Sorting-Camera-Culling\docs\template\game\Source\EntityManager.cpp(134,20): warning C4018: '<': no coinciden signed/unsigned
+C:\Users\ercanon\Documents\GitHub\Sprite-Sorting-Camera-Culling\docs\template\game\Source\EntityManager.cpp(194,29): warning C4018: '<': no coinciden signed/unsigned
+C:\Users\ercanon\Documents\GitHub\Sprite-Sorting-Camera-Culling\docs\template\game\Source\EntityManager.cpp(214,29): warning C4018: '<': no coinciden signed/unsigned
+C:\Users\ercanon\Documents\GitHub\Sprite-Sorting-Camera-Culling\docs\template\game\Source\EntityManager.cpp(260,22): warning C4018: '<': no coinciden signed/unsigned
+C:\Users\ercanon\Documents\GitHub\Sprite-Sorting-Camera-Culling\docs\template\game\Source\EntityManager.cpp(316,22): warning C4018: '<': no coinciden signed/unsigned
   Exterior.cpp
 C:\Users\ercanon\Documents\GitHub\Sprite-Sorting-Camera-Culling\docs\template\game\Source\Exterior.cpp(20,10): warning C4101: 'h': variable local sin referencia
 C:\Users\ercanon\Documents\GitHub\Sprite-Sorting-Camera-Culling\docs\template\game\Source\Exterior.cpp(20,7): warning C4101: 'w': variable local sin referencia
@@ -33,7 +38,8 @@ C:\Users\ercanon\Documents\GitHub\Sprite-Sorting-Camera-Culling\docs\template\ga
               TYPE=int
           ]
   SceneManager.cpp
+  Slime.cpp
+C:\Users\ercanon\Documents\GitHub\Sprite-Sorting-Camera-Culling\docs\template\game\Source\Slime.cpp(42,15): warning C4244: 'argumento': conversión de 'time_t' a 'unsigned int'; posible pérdida de datos
   Generando código...
-  LINK : no se encontró C:\Users\ercanon\Documents\GitHub\Sprite-Sorting-Camera-Culling\docs\template\Build\Debug\Game.exe o no lo generó el último vínculo incremental; ejecutando vínculo completo
   Game.vcxproj -> C:\Users\ercanon\Documents\GitHub\Sprite-Sorting-Camera-Culling\docs\template\Build\Debug\Game.exe
           1 archivo(s) copiado(s).

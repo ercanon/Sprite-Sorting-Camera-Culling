@@ -35,22 +35,22 @@ Player::Player(Input* input, Render* render, Textures* tex) : Entity(EntityType:
     // Animation pushbacks
     //
     animPlayerWalkLeft->loop = true;
-    animPlayerWalkLeft->speed = 0.05f;
+    animPlayerWalkLeft->speed = 0.15f;
     for (int i = 0; i < 4; ++i)
         animPlayerWalkLeft->PushBack({ 34 * i, 0, 34, 32 });
 
     animPlayerWalkRight->loop = true;
-    animPlayerWalkRight->speed = 0.05f;
+    animPlayerWalkRight->speed = 0.15f;
     for (int i = 0; i < 4; ++i)
         animPlayerWalkRight->PushBack({ 34 * i, 32, 34, 32 });
 
     animPlayerWalkDown->loop = true;
-    animPlayerWalkDown->speed = 0.05f;
+    animPlayerWalkDown->speed = 0.15f;
     for (int i = 0; i < 4; ++i)
         animPlayerWalkDown->PushBack({ 34 * i, 64, 34, 32 });
 
     animPlayerWalkUp->loop = true;
-    animPlayerWalkUp->speed = 0.05f;
+    animPlayerWalkUp->speed = 0.15f;
     for (int i = 0; i < 4; ++i)
         animPlayerWalkUp->PushBack({ 34 * i, 96, 34, 32 });
 

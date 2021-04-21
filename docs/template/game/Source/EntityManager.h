@@ -43,6 +43,7 @@ public:
 	bool UpdateAll(float dt, bool doLogic);
 
 	bool Draw();
+	void DrawSorted(Map* map);
 
 public:
 
@@ -59,6 +60,8 @@ private:
 	Input* input;
 	Render* render;
 	Textures* tex;
+
+	List<Assemble*> assembledList;
 };
 
 #endif // __ENTITYMANAGER_H__

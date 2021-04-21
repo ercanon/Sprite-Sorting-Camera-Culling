@@ -35,6 +35,8 @@ public:
 
     iPoint temPos;
     iPoint position;  
+    int width;
+    int height;
     bool renderable = false;
 };
 

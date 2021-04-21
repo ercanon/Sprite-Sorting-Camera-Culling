@@ -32,6 +32,9 @@ Exterior::~Exterior()
 bool Exterior::Load() /*EntityManager entityManager)*/
 {
 	sceneManager->entityManager->CreateEntity(EntityType::PLAYER)->position = iPoint (100, 100);
+	sceneManager->entityManager->CreateEntity(EntityType::ENEMY)->position = iPoint(1408, 128);
+	sceneManager->entityManager->CreateEntity(EntityType::ENEMY)->position = iPoint(1600, 448);
+	sceneManager->entityManager->CreateEntity(EntityType::ENEMY)->position = iPoint(1856, 192);
 
 	sceneManager->render->camera.w = sceneManager->win->screenSurface->w;
 	sceneManager->render->camera.h = sceneManager->win->screenSurface->h;
@@ -68,9 +71,7 @@ bool Exterior::Update(float dt)
 bool Exterior::Draw()
 {
 	// Draw map
-	map->Draw(sceneManager->render);
-
-	sceneManager->entityManager->Draw();
+	sceneManager->entityManager->DrawSorted(map);
 
 	return false;
 }

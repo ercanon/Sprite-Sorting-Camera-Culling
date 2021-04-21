@@ -14,27 +14,8 @@
 #include "PugiXml/src/pugixml.hpp"
 
 #define COST_MAP_SIZE	100
-
-
-struct TileSet
-{
-	SString	name;
-	int	firstgid;
-	int margin;
-	int	spacing;
-	int	tileWidth;
-	int	tileHeight;
-
-	SDL_Texture* texture;
-	int	texWidth;
-	int	texHeight;
-	int	numTilesWidth;
-	int	numTilesHeight;
-	int	offsetX;
-	int	offsetY;
-
-	SDL_Rect GetTileRect(int id) const;
-};
+#define MAX_TILES_WITH_PROPERTIES 42
+#define MAX_TILES_ASSEMBLED 50
 
 
 enum MapTypes
@@ -72,6 +53,33 @@ struct Properties
 	int GetProperty(const char* name, int default_value = 0) const;
 
 	List<Property*> list;
+};
+
+struct TileSet
+{
+	SString	name;
+	int	firstgid;
+	int margin;
+	int	spacing;
+	int	tileWidth;
+	int	tileHeight;
+
+	int tileCount;
+	struct TileProperty
+	{
+		int tileId;
+		Properties properties;
+	} tileProperty[MAX_TILES_WITH_PROPERTIES];
+
+	SDL_Texture* texture;
+	int	texWidth;
+	int	texHeight;
+	int	numTilesWidth;
+	int	numTilesHeight;
+	int	offsetX;
+	int	offsetY;
+
+	SDL_Rect GetTileRect(int id) const;
 };
 
 struct MapLayer
@@ -129,6 +137,22 @@ struct MapData
 	List<ObjectLayer*> objLayers;
 };
 
+class Assemble
+{
+public:
+
+	int tilesAssemble = 0;
+	struct TileInfo
+	{
+		iPoint tileMapPosition;
+		iPoint tileWorldPosition;
+		TileSet* tileset;
+		SDL_Rect rectangle;
+
+	} tileInfo[MAX_TILES_ASSEMBLED];
+
+};
+
 class Map : public Entity
 {
 public:
@@ -159,6 +183,8 @@ public:
 
 	iPoint WorldToMap(int x, int y) const;
 
+	TileSet* GetTilesetFromTileId(int id) const;
+
 	SDL_Rect GetTilemapRec(int x, int y) const;
 
 	bool CreateWalkabilityMap(int& width, int& height, uchar** buffer) const;
@@ -173,18 +199,16 @@ private:
 
 	bool LoadProperties(pugi::xml_node& node, Properties& properties);
 
-	TileSet* GetTilesetFromTileId(int id) const;
-
 public:
 
 	MapData data;
 
 	bool drawColliders = false;
-	bool noClip = false;
+
+	bool mapLoaded;
+	uint32 scale;
 
 	Properties properties;
-
-	bool doorHit = false;
 
 private:
 
@@ -192,9 +216,6 @@ private:
 
 	pugi::xml_document mapFile;
 	SString folder;
-	bool mapLoaded;
-
-	uint32 scale;
 };
 
 #endif // __MAP_H__

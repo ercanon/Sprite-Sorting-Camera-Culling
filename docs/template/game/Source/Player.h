@@ -48,8 +48,6 @@ public:
 private:
 
     // ----- PLAYER VARIABLES ----- //
-    // Player size
-    int width, height;
     // Player sprite sheets
     SDL_Texture* playerTexture;
     // Current Player animation
