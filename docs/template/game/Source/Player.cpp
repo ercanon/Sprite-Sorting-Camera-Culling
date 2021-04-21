@@ -120,8 +120,6 @@ bool Player::Draw()
     SDL_Rect rect = currentAnimation->GetCurrentFrame();
     render->DrawTexture(playerTexture, (int)position.x - 10, (int)position.y - 24, &rect);
 
-    render->DrawRectangle({position.x + playerCollision[0].x, position.y + playerCollision[0].y, playerCollision[3].x, playerCollision[3].y }, 0, 255, 0, 255);
-
     return false;
 }
 
