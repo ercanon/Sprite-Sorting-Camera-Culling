@@ -16,6 +16,13 @@ Using colliders to detect what entity must be rendered first.
 The camera culling is used to optimize the game by not rendering what is outside the camera.
 
 ## Implementation
+What I aim to achive is implement a sorting whitout being too complicated. With just adding attributes to the tiles of the tileset, adding a function and a few more things you can forget about the code. This code generate a group of objects or entities that I like to call Assembles from any layer, without needing an exclusive layer to sort, and then use it to sort the sprites.   
+The sorting I tried to achieve can be represented in 5 layers:
+* The first one would be the basic map.
+* The second would be entities that are under the assembles, those entities will be sorted by position to render them correctly.
+* The third would be the assembles.
+* The fourth would be the entities (sorted too) in general, unless they have been already rendered.
+* The last one would be details of the map that can be over the entities.
 
 ### TODO 1
 #### Add attributes to the tiles in the tileset.   
@@ -224,7 +231,7 @@ while (swapped)
 
 ### TODO 7.5
 #### The copy of the sorting
-Create a new `ListItem<Entity*>*` to copy the previous list sorted.  
+Create a new __ListItem<Entity*>*__ to copy the previous list sorted.  
 `The list sorted is inverted, so when the copy is used it must be rendered backwards (x->prev)`
 
 ### TODO 8
