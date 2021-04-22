@@ -137,6 +137,7 @@ for (int t = 0; t < tileset->tileCount; t++)
   }
 }
 ```
+
 ### TODO 6
 #### Store the Assemble information
 Store information about the assembles that are going to be created. If the actual tile and the previous have the same, the actual tile will count as the assemble of the previous tile. If not, it will generate a new assemble.
@@ -194,6 +195,7 @@ else
     assembledList.Add(assemble);
 }
 ```
+
 ### TODO 6.5
 #### Do not render the assembled tiles
 The tiles that have been assembled are going to be rendered later. A boolean will do the work.
@@ -203,25 +205,125 @@ The tiles that have been assembled are going to be rendered later. A boolean wil
 First, organize the entities by their position in the Y axis so, when drawing them, the entities will render in the correct order.
 ```
 ListItem<Entity*>* list = entities.start;
-if (entitiesDrawn == false)
+bool swapped = true;
+while (swapped)
 {
-    bool swapped = true;
-    while (swapped)
+    swapped = false;
+    while (list != NULL && list->next != NULL)
     {
-    	swapped = false;
-	while (list != NULL && list->next != NULL)
+    	if (list->data->position.y < list->next->data->position.y)
 	{
-	    if (list->data->position.y < list->next->data->position.y)
-	    {
-	    	SWAP(list->data, list->next->data);
-		swapped = true;
-	    }
-	    list = list->next;
+	    SWAP(list->data, list->next->data);
+	    swapped = true;
 	}
+	
+	list = list->next;
+    }
 }
 ```
+
 ### TODO 7.5
 #### The copy of the sorting
-Create a new ListItem<Entity*>* to copy the previous list sorted.
-`When drawing`
+Create a new `ListItem<Entity*>*` to copy the previous list sorted.
+`The list sorted is inverted, so when the copy is used it must be rendered backwards (x->prev)`
 
+### TODO 8
+#### Get the dimensions of the assemble
+To do it, we go for each assemble created getting its dimensions.
+```
+for (int l = 0; l < assembledList.Count(); l++)
+{
+    int maxX = assembledList.At(l)->data->tileInfo[0].tileWorldPosition.x;
+    int minX = assembledList.At(l)->data->tileInfo[0].tileWorldPosition.x;
+    int maxY = assembledList.At(l)->data->tileInfo[0].tileWorldPosition.y;
+    int minY = assembledList.At(l)->data->tileInfo[0].tileWorldPosition.y;
+    
+    for (int a = 0; a < assembledList.At(l)->data->tilesAssemble; a++)
+    {
+    	if (maxX < assembledList.At(l)->data->tileInfo[a].tileWorldPosition.x + map->data.tileWidth) 
+	    maxX = assembledList.At(l)->data->tileInfo[a].tileWorldPosition.x + map->data.tileWidth;
+	if (minX > assembledList.At(l)->data->tileInfo[a].tileWorldPosition.x)
+	    minX = assembledList.At(l)->data->tileInfo[a].tileWorldPosition.x;
+	if (maxY < assembledList.At(l)->data->tileInfo[a].tileWorldPosition.y + map->data.tileHeight)
+	    maxY = assembledList.At(l)->data->tileInfo[a].tileWorldPosition.y + map->data.tileHeight;
+	if (minY > assembledList.At(l)->data->tileInfo[a].tileWorldPosition.y)
+	    minY = assembledList.At(l)->data->tileInfo[a].tileWorldPosition.y;
+    }
+}
+```
+
+### TODO 9
+#### Draw entities below the assemble
+Using the previous TODO generate all entities that are under an assemble.
+```
+sorted = list;
+while (sorted != NULL)
+{
+   if (sorted->data->renderable == true)
+   {
+   	sorted->data->Draw();
+	sorted->data->renderable = false;
+   }
+   sorted = sorted->prev;
+}
+```
+
+### TODO 10
+#### Draw all assembles created
+Draw every assemble created, then delete them and clear the list to avoid memory leaks.
+```
+for (int l = 0; l < assembledList.Count(); l++)
+{
+    for (int a = 0; a < assembledList.At(l)->data->tilesAssemble; a++)
+    {
+    	render->DrawTexture(assembledList.At(l)->data->tileInfo[a].tileset->texture,
+	    assembledList.At(l)->data->tileInfo[a].tileWorldPosition.x + assembledList.At(l)->data->tileInfo[a].tileset->offsetX,
+	    assembledList.At(l)->data->tileInfo[a].tileWorldPosition.y + assembledList.At(l)->data->tileInfo[a].tileset->offsetY,
+	    &assembledList.At(l)->data->tileInfo[a].rectangle);
+    }
+    delete assembledList.At(l)->data;
+    assembledList.At(l)->data = nullptr;
+}
+assembledList.Clear();
+```
+### TODO 11
+#### Draw entities on top of the assembles
+Draw the rest of the entities that have not been rendered.
+```
+sorted = list;
+while (sorted != NULL)
+{
+    if (sorted->data->renderable == true)
+	    sorted->data->Draw();
+	    
+    sorted->data->renderable = true;
+    sorted = sorted->prev;
+}
+```
+
+### TODO 12
+#### Camera Culling
+Implement the camera culling. If any tile is not in the camera, will not be calculated and drawed.
+`If the assembles not render correctly, add a bit more in the dimensions of the camera (-render->camera.x - render->camera.w/4)`
+```
+for (int y = 0; y < map->data.height; ++y)
+{
+    for (int x = 0; x < map->data.width; ++x)
+    {
+        iPoint pos = map->MapToWorld(x, y);
+	
+	if (pos.x + map->data.tileWidth > -render->camera.x && pos.x < -render->camera.x + render->camera.w &&
+	    pos.y + map->data.tileWidth > -render->camera.y && pos.y < -render->camera.y + render->camera.h)
+	{}
+    }
+}
+```
+
+```
+if (sorted->data->position.x + map->data.tileWidth > -render->camera.x - render->camera.w && sorted->data->position.x < -render->camera.x + render->camera.w &&
+    sorted->data->position.y + map->data.tileWidth > -render->camera.y && sorted->data->position.y < -render->camera.y + render->camera.h &&
+    sorted->data->renderable == true)
+        sorted->data->Draw();
+```
+### EXTRAS
+Personalize and adapt the code as your necesities demand. You can add elements to improve the optimitation, or to draw entities once when rendering layers.
