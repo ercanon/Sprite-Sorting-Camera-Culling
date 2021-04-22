@@ -328,4 +328,4 @@ if (sorted->data->position.x + map->data.tileWidth > -render->camera.x &&
         sorted->data->Draw();
 ```
 ### EXTRAS
-Personalize and adapt the code as your necesities demand. You can add elements to improve the optimitation, or to draw entities once when rendering layers.
+Personalize and adapt the code as your needs demand. You can add elements to improve the optimitation, or to draw entities once when rendering layers.
