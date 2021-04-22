@@ -29,7 +29,7 @@ Some considerations:
 * Any layer above the one with the sorting tiles will render above the entities
 * The sorting tiles should have a squared pattern.
 
-Unluckily, there might be some bugs. What I experienced is because rendering the entities in two "layers". If the character is under an assemble with another entity the sorting between them works fine, but if you leave the assemble and the other entity is poking out, the character will render on top o the entity.  
+Unluckily, there might be some bugs. What I experienced is caused by rendering the entities in two "layers". If the character is under an assemble with another entity the sorting between them works fine, but if you leave the assemble and the other entity is poking out, the character will render on top o the entity.  
 
 ### TODO 1
 #### Add attributes to the tiles in the tileset.   
