@@ -25,8 +25,154 @@ Once you are in the tileset window, add attributes to each tile using right clic
 
 ### TODO 2
 #### Read the information of the tileset in your game
-`hola`
+You will need to store the information about the attributes implemented; in other words: how many tiles have a property, the ID of the tile, which property, etc. I did it like this:
+```
+int tileCount;
+struct TileProperty
+{
+  int tileId;
+  Properties properties;
+} tileProperty[MAX_TILES_WITH_PROPERTIES];
+```
+
+`Watch out because you need to declare first the struct Properties to store them.` 
+  
+Then, in the .cpp, read and store the variables. Something like this:
+```
+set->tileCount = 0;
+pugi::xml_node actualNode = tileset_node.child("tile");
+while (actualNode.child("properties"))
+{
+  set->tileProperty[set->tileCount].tileId = actualNode.attribute("id").as_int();
+  LoadProperties(actualNode, set->tileProperty[set->tileCount].properties);
+  
+  actualNode = actualNode.next_sibling();
+  set->tileCount++;
+}
+```
 
 ### TODO 3
+#### The function to draw everything
+We need in the entity manager a function to draw entities and maps.  
+So, for the moment, adapt how the map and the entities are drowed.
+
+### TODO 3.5
+#### Detect the tiles with attributes
+When rendering each tile, detect if the tile is one with an attribute.
+```
+for (int t = 0; t < tileset->tileCount; t++)
+{
+  if (tileId - 1 == tileset->tileProperty[t].tileId) 
+  {}
+}
+```
 
 ### TODO 4
+#### Avengers, Assemble!
+Assemble is the class that will make the 3D effect happen.  
+The objective of this class is to store information about the tiles of the objects or assembles and, later, sort them. It should have enough variables for the sorting and the render. 
+```
+class Assemble
+{
+public:
+
+  int tilesAssemble = 0;
+  struct TileInfo
+  {
+    iPoint tileMapPosition;
+    iPoint tileWorldPosition;
+    TileSet* tileset;
+    SDL_Rect rectangle;
+    
+  } tileInfo[MAX_TILES_ASSEMBLED];
+```
+
+### TODO 5
+#### Check the previous tiles
+To generate assembles we should check previous tiles in the X and Y axis, and get which attribute have.  
+Then, store information en the class. If the actual tile and the previous have the same, the actual tile will count as the assemble of the previous tile. If not, it will generate a new assemble.
+```
+int tileIdPrevX = layer->Get(x - 1, y);
+int tileIdPrevY = layer->Get(x, y - 1);
+TileSet* tilesetPrevX = nullptr;
+TileSet* tilesetPrevY = nullptr;
+
+if (tileIdPrevX > 0)
+  tilesetPrevX = map->GetTilesetFromTileId(tileIdPrevX);
+if (tileIdPrevY > 0)
+  tilesetPrevY = map->GetTilesetFromTileId(tileIdPrevY);
+int propPrevX = -1;
+int propPrevY = -1;
+
+for (int t = 0; t < tileset->tileCount; t++)
+{
+  if (tileId - 1 == tileset->tileProperty[t].tileId)
+  {
+    if (tileIdPrevX > 0)
+      for (int tp = 0; tp < tileset->tileCount; tp++)
+        if (tileIdPrevX - 1 == tilesetPrevX->tileProperty[tp].tileId)
+        {
+        propPrevX = tilesetPrevX->tileProperty[tp].properties.GetProperty("detectAssamble", 0);
+        break;
+        }
+    if (tileIdPrevY > 0)
+      for (int tp = 0; tp < tileset->tileCount; tp++)
+        if (tileIdPrevY - 1 == tilesetPrevY->tileProperty[tp].tileId)
+        {
+        propPrevY = tilesetPrevY->tileProperty[tp].properties.GetProperty("detectAssamble", 0);
+        break;
+        }
+        
+     if (tileset->tileProperty[t].properties.GetProperty("detectAssamble", 0) == propPrevX) 
+     {
+        bool done = false;
+        for (int i = 0; i < assembledList.At(a)->data->tilesAssemble; i++)
+        {
+            if (assembledList.At(a)->data->tileInfo[i].tileMapPosition.x == x - 1 && assembledList.At(a)->data->tileInfo[i].tileMapPosition.y == y)
+            {
+                assembledList.At(a)->data->tileInfo[assembledList.At(a)->data->tilesAssemble].tileMapPosition = { x, y };
+                assembledList.At(a)->data->tileInfo[assembledList.At(a)->data->tilesAssemble].tileWorldPosition = pos;
+                assembledList.At(a)->data->tileInfo[assembledList.At(a)->data->tilesAssemble].rectangle = rec;
+                assembledList.At(a)->data->tileInfo[assembledList.At(a)->data->tilesAssemble].tileset = tileset;
+                assembledList.At(a)->data->tilesAssemble++;
+                done = true;
+                break;
+            }
+         }
+         if (done) break;
+     }
+     else if (tileset->tileProperty[t].properties.GetProperty("detectAssamble", 0) == propPrevY) 
+     {
+        for (int a = 0; a < assembledList.Count(); a++)
+        {
+            bool done = false;
+            for (int i = 0; i < assembledList.At(a)->data->tilesAssemble; i++)
+            {
+                if (assembledList.At(a)->data->tileInfo[i].tileMapPosition.x == x && assembledList.At(a)->data->tileInfo[i].tileMapPosition.y == y - 1)
+                {
+                    assembledList.At(a)->data->tileInfo[assembledList.At(a)->data->tilesAssemble].tileMapPosition = { x, y };
+                    assembledList.At(a)->data->tileInfo[assembledList.At(a)->data->tilesAssemble].tileWorldPosition = pos;
+                    assembledList.At(a)->data->tileInfo[assembledList.At(a)->data->tilesAssemble].rectangle = rec;
+                    assembledList.At(a)->data->tileInfo[assembledList.At(a)->data->tilesAssemble].tileset = tileset;
+                    assembledList.At(a)->data->tilesAssemble++;
+                    done = true;
+                    break;
+                }
+            }
+            if (done) break;
+				}
+     }
+     else
+     {
+        assemble = new Assemble;
+        assemble->tileInfo[0].tileMapPosition = { x, y };
+        assemble->tileInfo[0].tileWorldPosition = pos;
+        assemble->tileInfo[0].rectangle = rec;
+        assemble->tileInfo[0].tileset = tileset;
+        assemble->tilesAssemble++;
+        assembledList.Add(assemble);
+     }
+     break;
+  }
+}
+```
