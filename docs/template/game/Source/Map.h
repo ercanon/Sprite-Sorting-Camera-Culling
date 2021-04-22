@@ -128,6 +128,8 @@ struct MapData
 	List<ObjectLayer*> objLayers;
 };
 
+//TODO 4: Create the class Assemble
+
 class Map : public Entity
 {
 public:

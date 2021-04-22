@@ -3,8 +3,48 @@
   Exterior.cpp
 C:\Users\ercanon\Documents\GitHub\Sprite-Sorting-Camera-Culling\docs\template\game\Source\Exterior.cpp(20,10): warning C4101: 'h': variable local sin referencia
 C:\Users\ercanon\Documents\GitHub\Sprite-Sorting-Camera-Culling\docs\template\game\Source\Exterior.cpp(20,7): warning C4101: 'w': variable local sin referencia
+  Main.cpp
   App.cpp
-  SceneManager.cpp
+  Map.cpp
+C:\Users\ercanon\Documents\GitHub\Sprite-Sorting-Camera-Culling\docs\template\game\Source\Map.cpp(93,20): warning C4018: '<': no coinciden signed/unsigned
+C:\Users\ercanon\Documents\GitHub\Sprite-Sorting-Camera-Culling\docs\template\game\Source\Map.cpp(101,10): warning C4018: '<': no coinciden signed/unsigned
+C:\Users\ercanon\Documents\GitHub\Sprite-Sorting-Camera-Culling\docs\template\game\Source\Map.cpp(181,25): warning C4838: la conversión de 'uint32' en 'int' requiere una conversión de restricción
+C:\Users\ercanon\Documents\GitHub\Sprite-Sorting-Camera-Culling\docs\template\game\Source\Map.cpp(181,58): warning C4838: la conversión de 'uint32' en 'int' requiere una conversión de restricción
+C:\Users\ercanon\Documents\GitHub\Sprite-Sorting-Camera-Culling\docs\template\game\Source\Map.cpp(182,22): warning C4838: la conversión de 'uint32' en 'int' requiere una conversión de restricción
+C:\Users\ercanon\Documents\GitHub\Sprite-Sorting-Camera-Culling\docs\template\game\Source\Map.cpp(182,47): warning C4838: la conversión de 'uint32' en 'int' requiere una conversión de restricción
+  Player.cpp
+C:\Users\ercanon\Documents\GitHub\Sprite-Sorting-Camera-Culling\docs\template\game\Source\Player.cpp(91,47): warning C4244: '-=': conversión de 'float' a 'TYPE'; posible pérdida de datos
+          with
+          [
+              TYPE=int
+          ]
+C:\Users\ercanon\Documents\GitHub\Sprite-Sorting-Camera-Culling\docs\template\game\Source\Player.cpp(96,51): warning C4244: '+=': conversión de 'float' a 'TYPE'; posible pérdida de datos
+          with
+          [
+              TYPE=int
+          ]
+C:\Users\ercanon\Documents\GitHub\Sprite-Sorting-Camera-Culling\docs\template\game\Source\Player.cpp(102,47): warning C4244: '-=': conversión de 'float' a 'TYPE'; posible pérdida de datos
+          with
+          [
+              TYPE=int
+          ]
+C:\Users\ercanon\Documents\GitHub\Sprite-Sorting-Camera-Culling\docs\template\game\Source\Player.cpp(107,51): warning C4244: '+=': conversión de 'float' a 'TYPE'; posible pérdida de datos
+          with
+          [
+              TYPE=int
+          ]
+  Slime.cpp
+C:\Users\ercanon\Documents\GitHub\Sprite-Sorting-Camera-Culling\docs\template\game\Source\Slime.cpp(42,15): warning C4244: 'argumento': conversión de 'time_t' a 'unsigned int'; posible pérdida de datos
   Generando código...
+  LINK : no se encontró C:\Users\ercanon\Documents\GitHub\Sprite-Sorting-Camera-Culling\docs\template\Build\Debug\Game.exe o no lo generó el último vínculo incremental; ejecutando vínculo completo
+pugixml.obj : warning LNK4099: no se encontró PDB 'vc142.pdb' con 'pugixml.obj' o en 'C:\Users\ercanon\Documents\GitHub\Sprite-Sorting-Camera-Culling\docs\template\Build\Debug\vc142.pdb'; se vinculará el objeto sin tener en cuenta información de depuración
+Log.obj : warning LNK4099: no se encontró PDB 'vc142.pdb' con 'Log.obj' o en 'C:\Users\ercanon\Documents\GitHub\Sprite-Sorting-Camera-Culling\docs\template\Build\Debug\vc142.pdb'; se vinculará el objeto sin tener en cuenta información de depuración
+Window.obj : warning LNK4099: no se encontró PDB 'vc142.pdb' con 'Window.obj' o en 'C:\Users\ercanon\Documents\GitHub\Sprite-Sorting-Camera-Culling\docs\template\Build\Debug\vc142.pdb'; se vinculará el objeto sin tener en cuenta información de depuración
+Timer.obj : warning LNK4099: no se encontró PDB 'vc142.pdb' con 'Timer.obj' o en 'C:\Users\ercanon\Documents\GitHub\Sprite-Sorting-Camera-Culling\docs\template\Build\Debug\vc142.pdb'; se vinculará el objeto sin tener en cuenta información de depuración
+Textures.obj : warning LNK4099: no se encontró PDB 'vc142.pdb' con 'Textures.obj' o en 'C:\Users\ercanon\Documents\GitHub\Sprite-Sorting-Camera-Culling\docs\template\Build\Debug\vc142.pdb'; se vinculará el objeto sin tener en cuenta información de depuración
+Render.obj : warning LNK4099: no se encontró PDB 'vc142.pdb' con 'Render.obj' o en 'C:\Users\ercanon\Documents\GitHub\Sprite-Sorting-Camera-Culling\docs\template\Build\Debug\vc142.pdb'; se vinculará el objeto sin tener en cuenta información de depuración
+PerfTimer.obj : warning LNK4099: no se encontró PDB 'vc142.pdb' con 'PerfTimer.obj' o en 'C:\Users\ercanon\Documents\GitHub\Sprite-Sorting-Camera-Culling\docs\template\Build\Debug\vc142.pdb'; se vinculará el objeto sin tener en cuenta información de depuración
+Input.obj : warning LNK4099: no se encontró PDB '' con 'Input.obj' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
+Font.obj : warning LNK4099: no se encontró PDB 'vc142.pdb' con 'Font.obj' o en 'C:\Users\ercanon\Documents\GitHub\Sprite-Sorting-Camera-Culling\docs\template\Build\Debug\vc142.pdb'; se vinculará el objeto sin tener en cuenta información de depuración
   Game.vcxproj -> C:\Users\ercanon\Documents\GitHub\Sprite-Sorting-Camera-Culling\docs\template\Build\Debug\Game.exe
           1 archivo(s) copiado(s).

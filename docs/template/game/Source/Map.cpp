@@ -414,6 +414,8 @@ bool Map::LoadTilesetDetails(pugi::xml_node& tileset_node, TileSet* set)
 		set->offsetY = 0;
 	}
 
+	//TODO 2: Read and store the information about the attributes
+
 	return ret;
 }
 

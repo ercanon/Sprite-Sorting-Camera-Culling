@@ -128,6 +128,13 @@ bool EntityManager::Draw()
 
 //TODO 3: The function to draw everything
 //TODO 3.5: Detect the tiles with attributes
-//TODO 4: Create the class Assemble
 //TODO 5: Check the previous tiles
-//TODO 6: Store the Assemble information
+//TODO 6: Store the assemble information
+//TODO 6.5: Do not render the assembles
+//TODO 7: Sort the entities by their position in Y
+//TODO 7.5: Copy the list sorted in a new list
+//TODO 8: Get the dimensions of the assemble
+//TODO 9: Draw the entities that are below the assemble
+//TODO 10: Draw assembles
+//TODO 11: Draw the rest of the entities
+//TODO 12: Camera Culling

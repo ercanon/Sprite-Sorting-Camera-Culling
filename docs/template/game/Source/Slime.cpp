@@ -34,7 +34,7 @@ Slime::Slime(Input* input, Render* render, Textures* tex) : Entity(EntityType::E
     position = iPoint(0, 0);
 
     width = 24;
-    height = 20;
+    height = 5;
 
     // Define Player animations
     slimeTexture = this->tex->Load("assets/sprites/slime.png");
@@ -72,7 +72,7 @@ bool Slime::Update(float dt)
 bool Slime::Draw()
 {
     SDL_Rect rec = slimeAnim->GetCurrentFrame();
-    render->DrawTexture(slimeTexture, position.x, position.y, &rec);
+    render->DrawTexture(slimeTexture, position.x, position.y - 13, &rec);
 
     return false;
 }
