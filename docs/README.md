@@ -22,7 +22,14 @@ The sorting I tried to achieve can be represented in 5 layers:
 * The second would be entities that are under the assembles, those entities will be sorted by position to render them correctly.
 * The third would be the assembles.
 * The fourth would be the entities (sorted too) in general, unless they have been already rendered.
-* The last one would be details of the map that can be over the entities.
+* The last one would be details of the map that can be over the entities.  
+
+Some considerations:  
+* The tiles that are going to be sorted must be in the same layer, but in the layer can be other tiles.
+* Any layer above the one with the sorting tiles will render above the entities
+* The sorting tiles should have a squared pattern.
+
+Unluckily, there might be some bugs. What I experienced is because rendering the entities in two "layers". If the character is under an assemble with another entity the sorting between them works fine, but if you leave the assemble and the other entity is poking out, the character will render on top o the entity.  
 
 ### TODO 1
 #### Add attributes to the tiles in the tileset.   
