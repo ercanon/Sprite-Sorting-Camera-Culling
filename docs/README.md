@@ -318,7 +318,7 @@ while (sorted != NULL)
 ### TODO 12
 #### Camera Culling
 Implement the camera culling. If any tile is not in the camera, will not be calculated and drawed.  
-`If the assembles not render correctly, add a bit more in the dimensions of the camera (-render->camera.x - render->camera.w/4)`
+`If the assembles do not render correctly, add a bit more in the dimensions of the camera (-render->camera.x - render->camera.w/4)`
 ```
 for (int y = 0; y < map->data.height; ++y)
 {
