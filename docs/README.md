@@ -53,7 +53,7 @@ struct TileProperty
 } tileProperty[MAX_TILES_WITH_PROPERTIES];
 ```
 
-`Watch out because you need to declare first the struct Properties to store them.` 
+`Watch out! You need to declare first the struct Properties to store them.` 
   
 Then, in the .cpp, read and store the variables. Something like this:
 ```
