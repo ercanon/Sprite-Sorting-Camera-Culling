@@ -73,8 +73,8 @@ for (int t = 0; t < tileset->tileCount; t++)
 
 ### TODO 4
 #### Avengers, Assemble!
-Assemble is the class that will make the 3D effect happen.  
-The objective of this class is to store information about the tiles of the objects or assembles and, later, sort them. It should have enough variables for the sorting and the render.   
+This class will store all the information about the generated assembles, that are tiles united to form like entities.  
+It should have enough variables for the sorting and the render.   
 This are the variables I used:
 ```
 class Assemble
@@ -139,7 +139,7 @@ for (int t = 0; t < tileset->tileCount; t++)
 ```
 ### TODO 6
 #### Store the Assemble information
-Store information about the Assemble in the class. If the actual tile and the previous have the same, the actual tile will count as the assemble of the previous tile. If not, it will generate a new assemble.
+Store information about the assembles that are going to be created. If the actual tile and the previous have the same, the actual tile will count as the assemble of the previous tile. If not, it will generate a new assemble.
 ```
 if (tileset->tileProperty[t].properties.GetProperty("detectAssamble", 0) == propPrevX)
 {
@@ -194,3 +194,34 @@ else
     assembledList.Add(assemble);
 }
 ```
+### TODO 6.5
+#### Do not render the assembled tiles
+The tiles that have been assembled are going to be rendered later. A boolean will do the work.
+
+### TODO 7
+#### The sorting starts
+First, organize the entities by their position in the Y axis so, when drawing them, the entities will render in the correct order.
+```
+ListItem<Entity*>* list = entities.start;
+if (entitiesDrawn == false)
+{
+    bool swapped = true;
+    while (swapped)
+    {
+    	swapped = false;
+	while (list != NULL && list->next != NULL)
+	{
+	    if (list->data->position.y < list->next->data->position.y)
+	    {
+	    	SWAP(list->data, list->next->data);
+		swapped = true;
+	    }
+	    list = list->next;
+	}
+}
+```
+### TODO 7.5
+#### The copy of the sorting
+Create a new ListItem<Entity*>* to copy the previous list sorted.
+`When drawing`
+
