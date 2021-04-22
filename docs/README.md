@@ -58,7 +58,7 @@ while (actualNode.child("properties"))
 ### TODO 3
 #### The function to draw everything
 We need in the entity manager a function to draw entities and maps.  
-So, for the moment, adapt how the map and the entities are drowed.
+So, for the moment, adapt how the map and the entities are drawed.
 
 ### TODO 3.5
 #### Detect the tiles with attributes
