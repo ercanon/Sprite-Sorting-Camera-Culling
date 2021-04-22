@@ -224,7 +224,7 @@ while (swapped)
 
 ### TODO 7.5
 #### The copy of the sorting
-Create a new `ListItem<Entity*>*` to copy the previous list sorted.
+Create a new `ListItem<Entity*>*` to copy the previous list sorted.  
 `The list sorted is inverted, so when the copy is used it must be rendered backwards (x->prev)`
 
 ### TODO 8
@@ -303,7 +303,7 @@ while (sorted != NULL)
 
 ### TODO 12
 #### Camera Culling
-Implement the camera culling. If any tile is not in the camera, will not be calculated and drawed.
+Implement the camera culling. If any tile is not in the camera, will not be calculated and drawed.  
 `If the assembles not render correctly, add a bit more in the dimensions of the camera (-render->camera.x - render->camera.w/4)`
 ```
 for (int y = 0; y < map->data.height; ++y)
@@ -320,8 +320,10 @@ for (int y = 0; y < map->data.height; ++y)
 ```
 
 ```
-if (sorted->data->position.x + map->data.tileWidth > -render->camera.x - render->camera.w && sorted->data->position.x < -render->camera.x + render->camera.w &&
-    sorted->data->position.y + map->data.tileWidth > -render->camera.y && sorted->data->position.y < -render->camera.y + render->camera.h &&
+if (sorted->data->position.x + map->data.tileWidth > -render->camera.x && 
+    sorted->data->position.x < -render->camera.x + render->camera.w &&
+    sorted->data->position.y + map->data.tileWidth > -render->camera.y && 
+    sorted->data->position.y < -render->camera.y + render->camera.h &&
     sorted->data->renderable == true)
         sorted->data->Draw();
 ```
