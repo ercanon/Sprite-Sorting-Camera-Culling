@@ -11,6 +11,7 @@ It is the easiest and fastest way to implement the sorting of sprites.
 ### Sorting Layers
 #### By position
 Consist in sorting the entities depending of their Y position.  
+The farther away of the camera, the first to render. In other words, the entity will be at the back.
 ![Changed](https://github.com/ercanon/Sprite-Sorting-Camera-Culling/blob/main/docs/images/Changed.gif)
 
 #### By triggers
