@@ -5,8 +5,8 @@ Depending in which order the program render the entities, the sprites overlaps o
 To achieve this effect, we can use differents methods:
 
 ### Cut Sprites
-The sprite or tile used is divided in two. The top part is rendered on top of the entities and the botton one under them. 
-It is the easiest and fastest way to implement the sorting of sprites.
+The sprite or tile used is divided in two. The top part is rendered on top of the entities and the botton one under them.   
+It is the easiest and fastest way to implement the sorting of sprites.  
 
 ### Sorting Layers
 #### By position
@@ -17,6 +17,7 @@ The farther away of the camera, the first to render. In other words, the entity 
 
 #### By triggers
 Using colliders to detect which entity must be rendered first.  
+This is usually implemented when a map have routes at different heights that intersect.  
 ![Pokemon](https://github.com/ercanon/Sprite-Sorting-Camera-Culling/blob/main/docs/images/Pokemon_Seaside_Cycling.png)
 ###### Pokemon Gen 3 - Seaside Cycling
 
@@ -27,7 +28,8 @@ This could be very useful for isometric games, because they look like 3D games, 
 ###### The Secret of Monkey Island: Special Edition
 
 ## Camera Culling
-The camera culling is used to optimize the game by not rendering what it is outside the camera. The tiles outside the boundaries of the camera are not calculated and the  entities are not updated.
+The camera culling is used to optimize the game by not rendering what it is outside the camera.   
+The tiles outside the boundaries of the camera are not calculated and the  entities are not updated and drawed.
 
 ## Implementation
 What I aim to achive is implement a sorting whitout being too complicated. With just adding attributes to the tiles of the tileset, adding a function and a few more things you can forget about the code. This code generate a group of objects or entities that I like to call Assembles from any layer, without needing an exclusive layer to sort, and then use it to sort the sprites.   
