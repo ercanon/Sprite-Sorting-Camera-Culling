@@ -17,7 +17,7 @@ Using colliders to detect which entity must be rendered first.
 
 #### 3D
 The axis used in 2D games are the X, for width, and Y, for height, but adding another one, Z, we make the game have depth, like a 3D.  
-This could be very useful for isometric games, because they look like 3D games, or side-view orthogonal games, because they do not have a lot of perspective. 
+This could be very useful for isometric games, because they look like 3D games, or side-view orthogonal games, because they do not usually have a lot of perspective. 
 
 ## Camera Culling
 The camera culling is used to optimize the game by not rendering what it is outside the camera. The tiles outside the boundaries of the camera are not calculated and the  entities are not updated.
