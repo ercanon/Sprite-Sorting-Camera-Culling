@@ -1,19 +1,26 @@
 # Sprite Sorting & Camera Culling
 ## Sprite Sorting
 The objective of implementing sprite sorting is to make a 2D world look like a 3D world.
+Depending in which order the program render the entities, the sprites overlaps ones to others. Playing with this order we can make the game looks nice.  
 To achieve this effect, we can use differents methods:
+
 ### Cut Sprites
-The sprite or tile used is divided in two. One part is rendered below the entities and the other above.  
+The sprite or tile used is divided in two. The top part is rendered on top of the entities and the botton one under them. 
 It is the easiest and fastest way to implement the sorting of sprites.
+
 ### Sorting Layers
 #### By position
 Consist in sorting the entities depending of their Y position.
+
 #### By triggers
-Using colliders to detect what entity must be rendered first.
+Using colliders to detect which entity must be rendered first.
+
 #### 3D
+The axis used in 2D games are the X, for width, and Y, for height, but adding another one, Z, we make the game have depth, like a 3D.  
+This could be very useful for isometric games, because they look like 3D games, or side-view orthogonal games, because they do not have a lot of perspective. 
 
 ## Camera Culling
-The camera culling is used to optimize the game by not rendering what it is outside the camera.
+The camera culling is used to optimize the game by not rendering what it is outside the camera. The tiles outside the boundaries of the camera are not calculated and the  entities are not updated.
 
 ## Implementation
 What I aim to achive is implement a sorting whitout being too complicated. With just adding attributes to the tiles of the tileset, adding a function and a few more things you can forget about the code. This code generate a group of objects or entities that I like to call Assembles from any layer, without needing an exclusive layer to sort, and then use it to sort the sprites.   
@@ -300,6 +307,7 @@ for (int l = 0; l < assembledList.Count(); l++)
 }
 assembledList.Clear();
 ```
+
 ### TODO 11
 #### Draw entities on top of the assembles
 Draw the rest of the entities that have not been rendered.
@@ -334,12 +342,11 @@ for (int y = 0; y < map->data.height; ++y)
 ```
 
 ```
-if (sorted->data->position.x + map->data.tileWidth > -render->camera.x && 
-    sorted->data->position.x < -render->camera.x + render->camera.w &&
-    sorted->data->position.y + map->data.tileWidth > -render->camera.y && 
-    sorted->data->position.y < -render->camera.y + render->camera.h &&
-    sorted->data->renderable == true)
-        sorted->data->Draw();
+if (list->data->position.x + list->data->width > -render->camera.x && list->data->position.x < -render->camera.x + render->camera.w &&
+list->data->position.y + list->data->height > -render->camera.y && list->data->position.y < -render->camera.y + render->camera.h)
+{}
 ```
+`The list sorted is inverted, so when the copy is used it must be rendered backwards (x->prev)`
+
 ### EXTRAS
 Personalize and adapt the code as your needs demand. You can add elements to improve the optimitation, or to draw entities once when rendering layers.
