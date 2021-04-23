@@ -12,19 +12,19 @@ It is the easiest and fastest way to implement the sorting of sprites.
 #### By position
 Consist in sorting the entities depending of their Y position.  
 The farther away of the camera, the first to render. In other words, the entity will be at the back.  
-![Changed](https://github.com/ercanon/Sprite-Sorting-Camera-Culling/blob/main/docs/images/Changed.gif)
+![Changed](images/Changed.gif)
 ###### Changed
 
 #### By triggers
 Using non-fisical colliders to detect which entity must be rendered first.  
 This is usually implemented when a map have routes at different heights that intersect.  
-![Pokemon](https://github.com/ercanon/Sprite-Sorting-Camera-Culling/blob/main/docs/images/Pokemon_Seaside_Cycling.png)
+![Pokemon](images/Pokemon_Seaside_Cycling.png)
 ###### Pokemon Gen 3 - Seaside Cycling
 
 #### 3D
 The axis used in 2D games are the X, for width, and Y, for height, but adding another one, Z, we make the game have depth, like a 3D.  
 This could be very useful for isometric games, because they look like 3D games, or side-view orthogonal games, because they do not usually have a lot of perspective.  
-![The Secret of Monkey Island](https://github.com/ercanon/Sprite-Sorting-Camera-Culling/blob/main/docs/images/Monkey_Island.gif)
+![The Secret of Monkey Island](images/Monkey_Island.gif)
 ###### The Secret of Monkey Island: Special Edition
 
 ## Camera Culling
@@ -51,10 +51,10 @@ Unluckily, there might be some bugs. What I experienced is caused by rendering t
 #### Attributes to the tiles.   
 I am using [Tiled](https://www.mapeditor.org/) to create the maps used in this template.  
 When you have all setted up to work, Tiled should have opened a tileset window. If not, click in the tileset options button, at the bottom of your active tilesets.  
-![tileset](https://github.com/ercanon/Sprite-Sorting-Camera-Culling/blob/main/docs/images/tileset.png)  
+![tileset](images/tileset.png)  
 Once you are in the tileset window, add attributes to each tile using right click on the mouse in "Custom Attributes" we see on the left part of this window. I used an int named "detectAssamble", and used a number for each tipe of tile. For example, if a tree is two tiles tall, use the same number in both tiles.    
-![detectAssamble 1](https://github.com/ercanon/Sprite-Sorting-Camera-Culling/blob/main/docs/images/detectAssamble_1.png)  
-![detectAssamble 2](https://github.com/ercanon/Sprite-Sorting-Camera-Culling/blob/main/docs/images/detectAssamble_2.png)
+![detectAssamble 1](images/detectAssamble_1.png)  
+![detectAssamble 2](images/detectAssamble_2.png)
 
 ### TODO 2
 #### Read & Store
