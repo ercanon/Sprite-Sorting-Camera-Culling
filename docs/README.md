@@ -34,7 +34,7 @@ Unluckily, there might be some bugs. What I experienced is caused by rendering t
 ### TODO 1
 #### Add attributes to the tiles in the tileset.   
 I am using [Tiled](https://www.mapeditor.org/) to create the maps used in this template.  
-When you have all setted up to work, Tiled should have opened a tileset window. If not, clic in the tileset options button, at the bottom of your active tilesets.  
+When you have all setted up to work, Tiled should have opened a tileset window. If not, click in the tileset options button, at the bottom of your active tilesets.  
 ![tileset](https://github.com/ercanon/Sprite-Sorting-Camera-Culling/blob/main/docs/images/tileset.png)  
 Once you are in the tileset window, add attributes to each tile using right click on the mouse in "Custom Attributes" we see on the left part of this window. I used an int named "detectAssamble", and used a number for each tipe of tile. For example, if a tree is two tiles tall, use the same number in both tiles.    
 ![detectAssamble_1](https://github.com/ercanon/Sprite-Sorting-Camera-Culling/blob/main/docs/images/detectAssamble_1.png)  
