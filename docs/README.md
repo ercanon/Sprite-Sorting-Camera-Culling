@@ -13,14 +13,18 @@ It is the easiest and fastest way to implement the sorting of sprites.
 Consist in sorting the entities depending of their Y position.  
 The farther away of the camera, the first to render. In other words, the entity will be at the back.  
 ![Changed](https://github.com/ercanon/Sprite-Sorting-Camera-Culling/blob/main/docs/images/Changed.gif)
+###### Changed
 
 #### By triggers
 Using colliders to detect which entity must be rendered first.
+![Pokemon](https://github.com/ercanon/Sprite-Sorting-Camera-Culling/blob/main/docs/images/Pokemon_Seaside_Cycling.png)
+###### Pokemon Gen 3 - Seaside Cycling
 
 #### 3D
 The axis used in 2D games are the X, for width, and Y, for height, but adding another one, Z, we make the game have depth, like a 3D.  
 This could be very useful for isometric games, because they look like 3D games, or side-view orthogonal games, because they do not usually have a lot of perspective.   
 ![The Secret of Monkey Island](https://github.com/ercanon/Sprite-Sorting-Camera-Culling/blob/main/docs/images/Monkey_Island.gif)
+###### The Secret of Monkey Island: Special Edition
 
 ## Camera Culling
 The camera culling is used to optimize the game by not rendering what it is outside the camera. The tiles outside the boundaries of the camera are not calculated and the  entities are not updated.
