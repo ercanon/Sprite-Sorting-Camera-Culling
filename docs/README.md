@@ -13,7 +13,7 @@ Using colliders to detect what entity must be rendered first.
 #### 3D
 
 ## Camera Culling
-The camera culling is used to optimize the game by not rendering what is outside the camera.
+The camera culling is used to optimize the game by not rendering what it is outside the camera.
 
 ## Implementation
 What I aim to achive is implement a sorting whitout being too complicated. With just adding attributes to the tiles of the tileset, adding a function and a few more things you can forget about the code. This code generate a group of objects or entities that I like to call Assembles from any layer, without needing an exclusive layer to sort, and then use it to sort the sprites.   
