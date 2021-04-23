@@ -16,7 +16,7 @@ The farther away of the camera, the first to render. In other words, the entity 
 ###### Changed
 
 #### By triggers
-Using colliders to detect which entity must be rendered first.  
+Using non-fisical colliders to detect which entity must be rendered first.  
 This is usually implemented when a map have routes at different heights that intersect.  
 ![Pokemon](https://github.com/ercanon/Sprite-Sorting-Camera-Culling/blob/main/docs/images/Pokemon_Seaside_Cycling.png)
 ###### Pokemon Gen 3 - Seaside Cycling
