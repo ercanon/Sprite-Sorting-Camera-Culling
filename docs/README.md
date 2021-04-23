@@ -22,7 +22,7 @@ Using colliders to detect which entity must be rendered first.
 
 #### 3D
 The axis used in 2D games are the X, for width, and Y, for height, but adding another one, Z, we make the game have depth, like a 3D.  
-This could be very useful for isometric games, because they look like 3D games, or side-view orthogonal games, because they do not usually have a lot of perspective.
+This could be very useful for isometric games, because they look like 3D games, or side-view orthogonal games, because they do not usually have a lot of perspective.  
 ![The Secret of Monkey Island](https://github.com/ercanon/Sprite-Sorting-Camera-Culling/blob/main/docs/images/Monkey_Island.gif)
 ###### The Secret of Monkey Island: Special Edition
 
