@@ -6,7 +6,7 @@ It contains:
 * A few ways to implement them.
 * How I implemented them in the code.
 ## About the Author
-I am Raul Cano, a student of the Videogames Development Degree in CITM, UPC Terrassa.  
+I am [Raul Cano](https://github.com/ercanon), a student of the Videogames Development Degree in CITM, UPC Terrassa.  
 If there is any doubt, contact me at raulcano5.rc@gmail.com.
 ## Links
 * The [Webside](https://ercanon.github.io/Sprite-Sorting-Camera-Culling/) with the information.
