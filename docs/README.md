@@ -170,7 +170,8 @@ if (tileset->tileProperty[t].properties.GetProperty("detectAssamble", 0) == prop
         bool done = false;
         for (int i = 0; i < assembledList.At(a)->data->tilesAssemble; i++)
 	{
-	    if (assembledList.At(a)->data->tileInfo[i].tileMapPosition.x == x - 1 && assembledList.At(a)->data->tileInfo[i].tileMapPosition.y == y)
+	    if (assembledList.At(a)->data->tileInfo[i].tileMapPosition.x == x - 1 && 
+	        assembledList.At(a)->data->tileInfo[i].tileMapPosition.y == y)
 	    {
 		assembledList.At(a)->data->tileInfo[assembledList.At(a)->data->tilesAssemble].tileMapPosition = { x, y };
 		assembledList.At(a)->data->tileInfo[assembledList.At(a)->data->tilesAssemble].tileWorldPosition = pos;
@@ -191,7 +192,8 @@ else if (tileset->tileProperty[t].properties.GetProperty("detectAssamble", 0) ==
         bool done = false;
 	for (int i = 0; i < assembledList.At(a)->data->tilesAssemble; i++)
 	{
-	    if (assembledList.At(a)->data->tileInfo[i].tileMapPosition.x == x && assembledList.At(a)->data->tileInfo[i].tileMapPosition.y == y - 1)
+	    if (assembledList.At(a)->data->tileInfo[i].tileMapPosition.x == x && 
+	        assembledList.At(a)->data->tileInfo[i].tileMapPosition.y == y - 1)
 	    {
 	        assembledList.At(a)->data->tileInfo[assembledList.At(a)->data->tilesAssemble].tileMapPosition = { x, y };
 		assembledList.At(a)->data->tileInfo[assembledList.At(a)->data->tilesAssemble].tileWorldPosition = pos;
@@ -342,8 +344,10 @@ for (int y = 0; y < map->data.height; ++y)
 ```
 
 ```
-if (list->data->position.x + list->data->width > -render->camera.x && list->data->position.x < -render->camera.x + render->camera.w &&
-list->data->position.y + list->data->height > -render->camera.y && list->data->position.y < -render->camera.y + render->camera.h)
+if (list->data->position.x + list->data->width > -render->camera.x && 
+    list->data->position.x < -render->camera.x + render->camera.w &&
+    list->data->position.y + list->data->height > -render->camera.y && 
+    list->data->position.y < -render->camera.y + render->camera.h)
 {}
 ```
 
