@@ -346,7 +346,6 @@ if (list->data->position.x + list->data->width > -render->camera.x && list->data
 list->data->position.y + list->data->height > -render->camera.y && list->data->position.y < -render->camera.y + render->camera.h)
 {}
 ```
-`The list sorted is inverted, so when the copy is used it must be rendered backwards (x->prev)`
 
 ### EXTRAS
 Personalize and adapt the code as your needs demand. You can add elements to improve the optimitation, or to draw entities once when rendering layers.
