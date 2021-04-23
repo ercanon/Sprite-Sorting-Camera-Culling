@@ -64,6 +64,7 @@ struct TileSet
 	int	tileWidth;
 	int	tileHeight;
 
+	//TODO 2: Read the information of the tileset
 	int tileCount;
 	struct TileProperty
 	{
