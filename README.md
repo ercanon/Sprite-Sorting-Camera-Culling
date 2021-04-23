@@ -11,3 +11,6 @@ If there is any doubt, contact me at raulcano5.rc@gmail.com.
 ## Links
 * The [Webside](https://ercanon.github.io/Sprite-Sorting-Camera-Culling/) with the information.
 * The tileset belongs to [Lanea Zimmerman](https://sharm.itch.io/tiny16).
+* Documentation:
+  * [Sprite Ordering and Camera Culling](https://christt105.github.io/Sprite_Ordering_and_Camera_Culling_Personal_Research/)
+  * [Guide to projection](https://www.significant-bits.com/a-laymans-guide-to-projection-in-videogames/)
