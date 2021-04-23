@@ -7,30 +7,33 @@ To achieve this effect, we can use differents methods:
 ### Cut Sprites
 The sprite or tile used is divided in two. The top part is rendered on top of the entities and the botton one under them.   
 It is the easiest and fastest way to implement the sorting of sprites.  
+![Eru's Adventures](images/eru's_adventures.gif)  
+###### Eru's Adventures (my "Treball de Recerca")
 
 ### Sorting Layers
 #### By position
 Consist in sorting the entities depending of their Y position.  
 The farther away of the camera, the first to render. In other words, the entity will be at the back.  
-![Changed](images/Changed.gif)
+![Changed](images/changed.gif)
 ###### Changed
 
 #### By triggers
 Using non-fisical colliders to detect which entity must be rendered first.  
 This is usually implemented when a map have routes at different heights that intersect.  
-![Pokemon](images/Pokemon_Seaside_Cycling.png)
+![Pokemon](images/pokemon_seaside_cycling.png)
 ###### Pokemon Gen 3 - Seaside Cycling
 
 #### 3D
 The axis used in 2D games are the X, for width, and Y, for height, but adding another one, Z, we make the game have depth, like a 3D.  
 This could be very useful for isometric games, because they look like 3D games, or side-view orthogonal games, because they do not usually have a lot of perspective.  
-![The Secret of Monkey Island](images/Monkey_Island.gif)
+![The Secret of Monkey Island](images/monkey_island.gif)
 ###### The Secret of Monkey Island: Special Edition
 
 ## Camera Culling
 The camera culling is used to optimize the game by not rendering what it is outside the camera.   
 The tiles outside the boundaries of the camera are not calculated and the  entities are not updated and drawed.  
-![Horizon Zero Down](images/zero_dawn_camera_culling.gif)
+![Horizon Zero Down](images/zero_dawn_camera_culling.gif)  
+###### Horizon Zero Down
 
 ## Implementation
 What I aim to achive is implement a sorting as automatic as I tryed. This code generate a group of objects or entities that I like to call "assembles" from any layer, without needing an exclusive layer to sort, and then use it to sort the sprites.   
