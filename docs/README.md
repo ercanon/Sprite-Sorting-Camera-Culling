@@ -10,14 +10,16 @@ It is the easiest and fastest way to implement the sorting of sprites.
 
 ### Sorting Layers
 #### By position
-Consist in sorting the entities depending of their Y position.
+Consist in sorting the entities depending of their Y position.  
+![Changed](https://github.com/ercanon/Sprite-Sorting-Camera-Culling/blob/main/docs/images/Changed.gif)
 
 #### By triggers
 Using colliders to detect which entity must be rendered first.
 
 #### 3D
 The axis used in 2D games are the X, for width, and Y, for height, but adding another one, Z, we make the game have depth, like a 3D.  
-This could be very useful for isometric games, because they look like 3D games, or side-view orthogonal games, because they do not usually have a lot of perspective. 
+This could be very useful for isometric games, because they look like 3D games, or side-view orthogonal games, because they do not usually have a lot of perspective.   
+![The Secret of Monkey Island](https://github.com/ercanon/Sprite-Sorting-Camera-Culling/blob/main/docs/images/Monkey_Island.gif)
 
 ## Camera Culling
 The camera culling is used to optimize the game by not rendering what it is outside the camera. The tiles outside the boundaries of the camera are not calculated and the  entities are not updated.
@@ -44,8 +46,8 @@ I am using [Tiled](https://www.mapeditor.org/) to create the maps used in this t
 When you have all setted up to work, Tiled should have opened a tileset window. If not, click in the tileset options button, at the bottom of your active tilesets.  
 ![tileset](https://github.com/ercanon/Sprite-Sorting-Camera-Culling/blob/main/docs/images/tileset.png)  
 Once you are in the tileset window, add attributes to each tile using right click on the mouse in "Custom Attributes" we see on the left part of this window. I used an int named "detectAssamble", and used a number for each tipe of tile. For example, if a tree is two tiles tall, use the same number in both tiles.    
-![detectAssamble_1](https://github.com/ercanon/Sprite-Sorting-Camera-Culling/blob/main/docs/images/detectAssamble_1.png)  
-![detectAssamble_2](https://github.com/ercanon/Sprite-Sorting-Camera-Culling/blob/main/docs/images/detectAssamble_2.png)
+![detectAssamble 1](https://github.com/ercanon/Sprite-Sorting-Camera-Culling/blob/main/docs/images/detectAssamble_1.png)  
+![detectAssamble 2](https://github.com/ercanon/Sprite-Sorting-Camera-Culling/blob/main/docs/images/detectAssamble_2.png)
 
 ### TODO 2
 #### Read the information of the tileset in your game
