@@ -16,13 +16,13 @@ The farther away of the camera, the first to render. In other words, the entity 
 ###### Changed
 
 #### By triggers
-Using colliders to detect which entity must be rendered first.
+Using colliders to detect which entity must be rendered first.  
 ![Pokemon](https://github.com/ercanon/Sprite-Sorting-Camera-Culling/blob/main/docs/images/Pokemon_Seaside_Cycling.png)
 ###### Pokemon Gen 3 - Seaside Cycling
 
 #### 3D
 The axis used in 2D games are the X, for width, and Y, for height, but adding another one, Z, we make the game have depth, like a 3D.  
-This could be very useful for isometric games, because they look like 3D games, or side-view orthogonal games, because they do not usually have a lot of perspective.   
+This could be very useful for isometric games, because they look like 3D games, or side-view orthogonal games, because they do not usually have a lot of perspective.
 ![The Secret of Monkey Island](https://github.com/ercanon/Sprite-Sorting-Camera-Culling/blob/main/docs/images/Monkey_Island.gif)
 ###### The Secret of Monkey Island: Special Edition
 
@@ -46,7 +46,7 @@ Some considerations:
 Unluckily, there might be some bugs. What I experienced is caused by rendering the entities in two "layers". If the character is under an assemble with another entity the sorting between them works fine, but if you leave the assemble and the other entity is poking out, the character will render on top o the entity.  
 
 ### TODO 1
-#### Add attributes to the tiles in the tileset.   
+#### Attributes to the tiles.   
 I am using [Tiled](https://www.mapeditor.org/) to create the maps used in this template.  
 When you have all setted up to work, Tiled should have opened a tileset window. If not, click in the tileset options button, at the bottom of your active tilesets.  
 ![tileset](https://github.com/ercanon/Sprite-Sorting-Camera-Culling/blob/main/docs/images/tileset.png)  
@@ -55,7 +55,7 @@ Once you are in the tileset window, add attributes to each tile using right clic
 ![detectAssamble 2](https://github.com/ercanon/Sprite-Sorting-Camera-Culling/blob/main/docs/images/detectAssamble_2.png)
 
 ### TODO 2
-#### Read the information of the tileset in your game
+#### Read & Store
 You will need to store the information about the attributes implemented; in other words: how many tiles have a property, the ID of the tile, which property, etc. \
   I did it like this:
 ```
@@ -89,7 +89,7 @@ We need in the entity manager a function to draw entities and maps.
 So, for the moment, adapt how the map and the entities are drawed.
 
 ### TODO 3.5
-#### Detect the tiles with attributes
+#### Detect them!
 When rendering each tile, detect if the tile is one with an attribute.
 ```
 for (int t = 0; t < tileset->tileCount; t++)
@@ -121,7 +121,7 @@ public:
 ```
 
 ### TODO 5
-#### Check the previous tiles
+#### The previous have the result
 To generate assembles we should check previous tiles in the X and Y axis.  
 ```
 int tileIdPrevX = layer->Get(x - 1, y);
@@ -167,7 +167,7 @@ for (int t = 0; t < tileset->tileCount; t++)
 ```
 
 ### TODO 6
-#### Store the Assemble information
+#### Store the Assemble
 Store information about the assembles that are going to be created. If the actual tile and the previous have the same, the actual tile will count as the assemble of the previous tile. If not, it will generate a new assemble.
 ```
 if (tileset->tileProperty[t].properties.GetProperty("detectAssamble", 0) == propPrevX)
@@ -227,7 +227,7 @@ else
 ```
 
 ### TODO 6.5
-#### Do not render the assembled tiles
+#### ERROR: assemble not rendered
 The tiles that have been assembled are going to be rendered later. A boolean will do the work.
 
 ### TODO 7
@@ -253,13 +253,13 @@ while (swapped)
 ```
 
 ### TODO 7.5
-#### The copy of the sorting
+#### Copying the work
 Create a new __ListItem<Entity*>*__ to copy the previous list sorted.  
 `The list sorted is inverted, so when the copy is used it must be rendered backwards (x->prev)`
 
 ### TODO 8
-#### Get the dimensions of the assemble
-To do it, we go for each assemble created getting its dimensions.
+#### Near the Endgame
+To get the dimensions of the assemble, we go for each assemble created getting its dimensions.
 ```
 for (int l = 0; l < assembledList.Count(); l++)
 {
@@ -283,13 +283,15 @@ for (int l = 0; l < assembledList.Count(); l++)
 ```
 
 ### TODO 9
-#### Draw entities below the assemble
+#### Below boys, below
 Using the previous TODO generate all entities that are under an assemble.
 ```
 sorted = list;
 while (sorted != NULL)
 {
-   if (sorted->data->renderable == true)
+   if (sorted->data->position.x + sorted->data->width >= minX && sorted->data->position.x <= maxX &&
+       sorted->data->position.y + sorted->data->height >= minY && sorted->data->position.y <= maxY &&
+       sorted->data->renderable == true)
    {
    	sorted->data->Draw();
 	sorted->data->renderable = false;
@@ -299,7 +301,7 @@ while (sorted != NULL)
 ```
 
 ### TODO 10
-#### Draw all assembles created
+#### Draw!
 Draw every assemble created, then delete them and clear the list to avoid memory leaks.
 ```
 for (int l = 0; l < assembledList.Count(); l++)
@@ -318,7 +320,7 @@ assembledList.Clear();
 ```
 
 ### TODO 11
-#### Draw entities on top of the assembles
+#### On top of the world
 Draw the rest of the entities that have not been rendered.
 ```
 sorted = list;
