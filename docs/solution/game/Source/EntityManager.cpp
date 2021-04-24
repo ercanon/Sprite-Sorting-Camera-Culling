@@ -204,7 +204,7 @@ void EntityManager::DrawSorted(Map* map)
 												break;
 											}
 									
-									//TODO 6: Store the Assemble information
+									//TODO 6: Store information to the assemble or generate a new one
 									if (tileset->tileProperty[t].properties.GetProperty("detectAssamble", 0) == propPrevX)
 									{
 										for (int a = 0; a < assembledList.Count(); a++)

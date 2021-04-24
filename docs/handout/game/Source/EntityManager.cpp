@@ -130,7 +130,7 @@ bool EntityManager::Draw()
 //TODO 3: The function to draw everything
 //TODO 3.5: Detect the tiles with attributes
 //TODO 5: Check the previous tiles
-//TODO 6: Store the assemble information
+//TODO 6: Store information to the assemble or generate a new one
 //TODO 6.5: Do not render the assembles
 //TODO 7: Sort the entities by their position in Y
 //TODO 7.5: Copy the list sorted in a new list
