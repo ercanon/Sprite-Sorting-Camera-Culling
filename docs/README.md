@@ -8,7 +8,7 @@ To achieve this effect, we can use differents methods:
 The sprite or tile used is divided in two. The top part is rendered on top of the entities and the botton one under them.   
 It is the easiest and fastest way to implement the sorting of sprites.  
 ![Eru's Adventures](images/eru's_adventures.gif)  
-###### Eru's Adventures (my "Treball de Recerca")
+###### Eru’s Adventure, my “Research Work” from high school
 
 ### Sorting Layers
 #### By position
