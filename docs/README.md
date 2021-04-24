@@ -17,7 +17,7 @@ The farther away of the camera, the first to render. In other words, the entity 
 ![Changed](images/changed.gif)
 ###### Changed
 
-#### By triggers
+#### With triggers
 Using non-fisical colliders to detect which entity must be rendered first.  
 This is usually implemented when a map have routes at different heights that intersect.  
 ![Pokemon](images/pokemon_seaside_cycling.png)
