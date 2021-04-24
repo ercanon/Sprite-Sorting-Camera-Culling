@@ -36,7 +36,7 @@ The tiles outside the boundaries of the camera are not calculated and the  entit
 ###### Horizon Zero Down
 
 ## Implementation
-What I aim to achive is implement a sorting as automatic as I tryed. This code generate a group of objects or entities that I like to call "assembles" from any layer, without needing an exclusive layer to sort, and then use it to sort the sprites.   
+What I aimed to achive is implement a sorting as automatic as I could create. This code generate a group of objects or entities that I like to call "assembles" from any layer, without needing an exclusive layer to sort, and then use it to sort the sprites.   
 The sorting I tried to achieve can be represented in 5 layers:
 * The first one would be the basic map.
 * The second would be entities that are under the assembles, those entities will be sorted by position to render them correctly.
