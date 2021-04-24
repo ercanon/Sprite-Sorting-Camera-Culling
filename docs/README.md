@@ -174,7 +174,7 @@ for (int t = 0; t < tileset->tileCount; t++)
 
 ### TODO 6
 #### Store the Assemble
-Store information about the assembles that are going to be created. If the actual tile and the previous have the same, the actual tile will count as the assemble of the previous tile. If not, it will generate a new assemble.
+Store information about the assembles that are going to be created. If the actual tile and the previous have the same attribute, the actual tile will count as the assemble of the previous tile. If not, it will generate a new assemble.
 ```
 if (tileset->tileProperty[t].properties.GetProperty("detectAssamble", 0) == propPrevX)
 {
