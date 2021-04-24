@@ -33,7 +33,7 @@ This could be very useful for isometric games, because they look like 3D games, 
 The camera culling is used to optimize the game by not rendering what it is outside the camera.   
 The tiles outside the boundaries of the camera are not calculated and the  entities are not updated and drawed.  
 ![Horizon Zero Down](images/zero_dawn_camera_culling.gif)  
-###### Horizon Zero Down
+###### Horizon Zero Dawn
 
 ## Implementation
 What I aimed to achive is implement a sorting as automatic as I could create. This code generate a group of tiles that I like to call "assembles" from any layer, without needing an exclusive layer to sort, and then use it to sort the sprites.   
