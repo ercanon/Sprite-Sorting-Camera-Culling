@@ -48,6 +48,9 @@
     <ClCompile Include="Source\Slime.cpp">
       <Filter>Entities</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Assemble.cpp">
+      <Filter>Entities</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\App.h" />
@@ -130,6 +133,9 @@
       <Filter>Utils</Filter>
     </ClInclude>
     <ClInclude Include="Source\Slime.h">
+      <Filter>Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Assemble.h">
       <Filter>Entities</Filter>
     </ClInclude>
   </ItemGroup>

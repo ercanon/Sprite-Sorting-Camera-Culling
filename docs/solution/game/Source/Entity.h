@@ -9,6 +9,7 @@ enum class EntityType
     PLAYER,
     ENEMY,
     MAP,
+    ASSEMBLE,
     UNKNOWN
 };
 
